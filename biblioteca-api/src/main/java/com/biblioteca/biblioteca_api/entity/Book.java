@@ -1,7 +1,8 @@
-package domain.entity;
+package com.biblioteca.biblioteca_api.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+
 import java.math.BigDecimal;
 
 @Entity
