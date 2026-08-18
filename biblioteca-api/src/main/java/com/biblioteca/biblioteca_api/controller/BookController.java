@@ -32,4 +32,15 @@ public class BookController {
     public ResponseEntity<Book> findById(@PathVariable Long id) {
         return ResponseEntity.ok(bookService.findById(id));
     }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Book> update(@PathVariable Long id, @Valid @RequestBody BookDTO dto) {
+        return ResponseEntity.ok(bookService.update(id, dto));
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> delete(@PathVariable Long id) {
+        bookService.delete(id);
+        return ResponseEntity.noContent().build();
+    }
 }
